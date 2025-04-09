@@ -15,7 +15,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    domains: ['localhost'],
+    domains: ['localhost', 'liveturb.com', 'app.liveturb.com'],
   },
   experimental: {
     webpackBuildWorker: true,
@@ -26,7 +26,7 @@ const nextConfig = {
     return [
       {
         source: '/api/v1/:path*',
-        destination: 'http://localhost:8000/api/v1/:path*',
+        destination: 'https://liveturb.com/api/v1/:path*',
         basePath: false
       },
     ];

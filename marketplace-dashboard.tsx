@@ -396,7 +396,7 @@ const MarketplaceDashboard: React.FC = () => {
         setTemMaisItens(true)
         setIsLoading(true)
 
-        // COMENTÁRIO: Aqui você fará a chamada real à API com os novos filtros
+        // COMENTÁRIO: Aqui você faria a chamada real à API com os novos filtros
         const filters = getFilters()
         const result = await fetchDataFromAPI(1, filters)
 
@@ -497,7 +497,7 @@ const MarketplaceDashboard: React.FC = () => {
       {/* Search Bar */}
       <div className="flex items-center justify-center p-6 relative">
         <a
-          href="http://localhost:8000/my-broadcasts"
+          href="https://liveturb.com/my-broadcasts"
           // Atributos target e rel removidos para abrir na mesma guia
           className="absolute left-6 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white py-2 px-2 hover:px-4 rounded-md shadow-md shadow-blue-500/20 transition-all duration-200 flex items-center group overflow-hidden"
         >
@@ -660,4 +660,3 @@ const MarketplaceDashboard: React.FC = () => {
 }
 
 export default MarketplaceDashboard
-
