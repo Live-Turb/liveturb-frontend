@@ -104,7 +104,7 @@ export default function NavigationMenu() {
               >
                 TESTE 7 DIAS GRATIS
               </Button>
-              <Link href="http://localhost:8000/login" passHref legacyBehavior>
+              <Link href="https://liveturb.com/login" passHref legacyBehavior>
                 <Button
                   className="bg-white hover:bg-gray-100 text-gray-800"
                 >
@@ -156,7 +156,7 @@ export default function NavigationMenu() {
                 >
                   TESTE 7 DIAS GRATIS
                 </Button>
-                <Link href="http://localhost:8000/login" passHref legacyBehavior>
+                <Link href="https://liveturb.com/login" passHref legacyBehavior>
                   <Button
                     className="bg-white hover:bg-gray-100 text-gray-800 w-full mt-2"
                   >
@@ -174,4 +174,3 @@ export default function NavigationMenu() {
     </>
   )
 }
-

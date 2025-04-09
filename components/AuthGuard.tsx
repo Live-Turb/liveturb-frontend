@@ -15,7 +15,7 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
   useEffect(() => {
     if (!isLoading) {
       if (!user) {
-        const loginUrl = `http://localhost:8000/login`;
+        const loginUrl = `https://liveturb.com/login`;
         const redirectTo = encodeURIComponent(window.location.href);
         // Usamos window.location.href para redirecionamento cross-origin
         window.location.href = `${loginUrl}?redirect_to=${redirectTo}`;
