@@ -16,7 +16,10 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
     if (!isLoading) {
       if (!user) {
         const loginUrl = `https://liveturb.com/login`;
-        const redirectTo = encodeURIComponent(window.location.href);
+        // Precisamos usar app.liveturb.com no redirect_to
+        // Modificamos window.location.href para garantir que estamos redirecionando para o domínio app.liveturb.com
+        const currentPath = window.location.pathname + window.location.search;
+        const redirectTo = encodeURIComponent(`https://app.liveturb.com${currentPath}`);
         // Usamos window.location.href para redirecionamento cross-origin
         window.location.href = `${loginUrl}?redirect_to=${redirectTo}`;
       }
