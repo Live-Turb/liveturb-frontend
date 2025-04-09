@@ -29,6 +29,16 @@ const nextConfig = {
         destination: 'https://liveturb.com/api/v1/:path*',
         basePath: false
       },
+      {
+        source: '/api/user',
+        destination: 'https://liveturb.com/api/user',
+        basePath: false
+      },
+      {
+        source: '/sanctum/csrf-cookie',
+        destination: 'https://liveturb.com/sanctum/csrf-cookie',
+        basePath: false
+      },
     ];
   },
 }
