@@ -499,7 +499,7 @@ const MarketplaceDashboard: React.FC = () => {
         <a
           href="https://liveturb.com/my-broadcasts"
           // Atributos target e rel removidos para abrir na mesma guia
-          className="absolute left-6 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white py-2 px-2 hover:px-4 rounded-md shadow-md shadow-blue-500/20 transition-all duration-200 flex items-center group overflow-hidden"
+          className="absolute left-6 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white py-2 px-2 hover:px-4 rounded-md shadow-md shadow-blue-500/20 transition-all duration-200 flex items-center group overflow-hidden z-50"
         >
           <ArrowLeft size={16} className="mr-0 group-hover:mr-1" />
           <span className="w-0 overflow-hidden group-hover:w-auto whitespace-nowrap transition-all duration-200">
