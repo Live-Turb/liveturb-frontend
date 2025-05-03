@@ -1,0 +1,11 @@
+{
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "nodeVersion": "18",
+  "crons": [],
+  "buildEnvironment": {
+    "NEXT_TELEMETRY_DISABLED": "1"
+  }
+}

@@ -18,9 +18,10 @@ const nextConfig = {
     domains: ['localhost', 'liveturb.com', 'app.liveturb.com'],
   },
   experimental: {
-    webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
+    // Removendo configurações experimentais que podem causar problemas
+    // webpackBuildWorker: true,
+    // parallelServerBuildTraces: true,
+    // parallelServerCompiles: true,
   },
   async rewrites() {
     return [

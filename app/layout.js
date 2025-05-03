@@ -48,7 +48,3 @@ function RootLayout({ children }) {
 }
 
 export default RootLayout
-
-
-
-// Imports e metadata movidos para o topo
