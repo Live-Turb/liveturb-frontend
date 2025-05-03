@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { startTrial } from "@/lib/fbpixel"
 
 export default function NavigationMenu() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -54,6 +55,9 @@ export default function NavigationMenu() {
       const yOffset = -80 // Header height + some padding
       const y = precosSection.getBoundingClientRect().top + window.pageYOffset + yOffset
       window.scrollTo({ top: y, behavior: "smooth" })
+      
+      // Dispara o evento de início de teste gratuito para o Facebook Pixel
+      startTrial()
     }
   }
 

@@ -1,5 +1,6 @@
 import './globals.css'
 import { AuthProvider } from '../context/AuthContext'; // Importa o AuthProvider
+import FacebookPixelProvider from '../lib/fbpixel/FacebookPixelProvider'; // Importa o FacebookPixelProvider
 
 export const metadata = {
   generator: 'v0.dev'
@@ -10,7 +11,9 @@ function RootLayout({ children }) {
     <html lang="pt-BR" suppressHydrationWarning={true}>
       <body suppressHydrationWarning={true}>
         <AuthProvider> {/* Envolve o conteúdo com o AuthProvider */}
-          {children}
+          <FacebookPixelProvider> {/* Adiciona o Facebook Pixel */}
+            {children}
+          </FacebookPixelProvider>
         </AuthProvider>
       </body>
     </html>

@@ -4,6 +4,7 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { motion } from "framer-motion"
+import { initiateCheckout } from "@/lib/fbpixel" // Importa a função de rastreamento para checkout
 
 export default function PricingSection() {
   const plans = [
@@ -24,6 +25,7 @@ export default function PricingSection() {
       cta: "Começar Agora",
       popular: false,
       url: "https://liveturb.com/user/register/6bc0595a-f99b-45f0-9840-1b223603286d",
+      value: 97
     },
     {
       name: "Profissional",
@@ -43,6 +45,7 @@ export default function PricingSection() {
       cta: "Escolher Plano",
       popular: true,
       url: "https://liveturb.com/user/register/313892f0-e4e9-4a7b-8927-ddd15f803879",
+      value: 297
     },
     {
       name: "Empresarial",
@@ -63,8 +66,21 @@ export default function PricingSection() {
       cta: "Escolher Plano",
       popular: false,
       url: "https://liveturb.com/user/register/4445d507-5a66-4dda-83de-a660878e1274",
+      value: 597
     },
   ]
+
+  // Função para lidar com o clique no botão de plano
+  const handlePlanClick = (plan) => {
+    // Dispara o evento de início de checkout para o Facebook Pixel com os dados do plano
+    initiateCheckout({
+      content_name: `Plano ${plan.name}`,
+      content_category: 'subscription',
+      content_ids: [plan.name.toLowerCase()],
+      value: plan.value,
+      currency: 'BRL',
+    });
+  };
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-blue-900/10 to-gray-900">
@@ -117,7 +133,13 @@ export default function PricingSection() {
                 </CardContent>
 
                 <CardFooter>
-                  <a href={plan.url} target="_blank" rel="noopener noreferrer" className="w-full">
+                  <a 
+                    href={plan.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="w-full"
+                    onClick={() => handlePlanClick(plan)}
+                  >
                     <Button
                       className={`w-full ${plan.popular ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-none" : "bg-gray-800 text-gray-300 border border-gray-700 hover:bg-gray-700"}`}
                     >
@@ -137,4 +159,3 @@ export default function PricingSection() {
     </section>
   )
 }
-
